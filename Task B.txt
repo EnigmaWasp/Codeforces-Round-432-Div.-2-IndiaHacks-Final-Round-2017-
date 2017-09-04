@@ -1,0 +1,28 @@
+
+import java.io.*;
+import java.util.*;
+
+public class B {
+
+    public static void main(String[] args) {
+        	Scanner in = new Scanner(System.in);
+	    	PrintWriter out = new PrintWriter(System.out);
+double ax = in.nextDouble();
+            double ay = in.nextDouble();
+            double bx = in.nextDouble();
+            double by = in.nextDouble();
+            double cx = in.nextDouble();
+            double cy = in.nextDouble();
+            double d1 = dist(ax , ay , bx , by);
+            double d2 = dist(bx , by , cx , cy);
+            if (d1 != d2) out.println("No"); else {
+                double a = ay - by;
+                double b = bx - ax;
+                double c = ax * by - bx * ay;
+                if (a * cx + b * cy + c != 0) out.println("Yes"); else out.println("No");
+            }            out.close();
+    }
+    public static double dist(double x , double y , double x2 , double y2) {
+            return Math.sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
+        }
+}
